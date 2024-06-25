@@ -43,6 +43,7 @@ const storage = multer.diskStorage({
 });
 const handleMultipartData = multer({ storage, limits: { fileSize: 1000000 * 5 } }).single("imgUrl");
 
+app.use('/', authRoutes);
 // Routes d'authentification
 app.use('/api/auth', authRoutes);
 
